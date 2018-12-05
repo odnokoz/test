@@ -1,0 +1,73 @@
+// COLOR VARIABLES
+$color-orange: #e5975d;
+$color-red: #e77444;
+
+$color-grey: #cccccc;
+$color-grey-light: #f3f5f8;
+$color-grey-dark: #dce1e9;
+
+$color-black: #362d29;
+
+// FONT VARIABLES
+$font-primary: 'Roboto', sans-serif;
+$font-display: 'Arimo', sans-serif;
+
+//RESPONSIVE BREAK POINTS
+$bp-large: 62.5em; //1000px  / 16px = 62.5em
+$bp-medium: 50em; // 800px
+$bp-small: 40.6em;//650px
+$bp-micro: 28em;//450px
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+}
+
+html {
+	box-sizing: border-box;
+	font-size: 62.5%; // 1rem = 10px
+
+	@media only screen and (max-width: $bp-large) {
+		font-size: 50%;
+	}
+}
+
+body {
+	font-family: $font-primary;
+	color: $color-black;
+	font-weight: 400;
+}
+
+
+.slide {
+	display: grid;
+	grid-template-rows: repeat(3, minmax(min-content, 15.5rem));
+	grid-template-columns: [full-start] 1fr min-content repeat(10, [col-start] minmax(min-content, 28.5rem) [col-end])
+	 1fr [full-end];
+	grid-gap: 3rem;
+	
+
+	@media only screen and (max-width: $bp-medium) {
+		grid-gap: 1.8rem; 
+		grid-template-columns: 1fr repeat(auto-fit, minmax(23rem, 1fr));
+	}
+
+	@media only screen and (max-width: $bp-micro) {
+			grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));		
+		}
+}
+
+
+
+
+
+
+
+
+
+
+
+
