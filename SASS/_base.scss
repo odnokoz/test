@@ -13,10 +13,10 @@ $font-primary: 'Roboto', sans-serif;
 $font-display: 'Arimo', sans-serif;
 
 //RESPONSIVE BREAK POINTS
-$bp-large: 62.5em; //1000px  / 16px = 62.5em
-$bp-medium: 50em; // 800px
-$bp-small: 40.6em;//650px
-$bp-micro: 28em;//450px
+$bp-large: 65.6em; //1050px  / 16px = 62.5em
+$bp-medium: 53em; // 850px
+$bp-small: 37.5em;//600px
+$bp-micro: 31.3em;//500px
 
 *,
 *::before,
@@ -28,10 +28,14 @@ $bp-micro: 28em;//450px
 
 html {
 	box-sizing: border-box;
-	font-size: 62.5%; // 1rem = 10px
+	font-size: 65.6%; // 1rem = 10px
 
 	@media only screen and (max-width: $bp-large) {
 		font-size: 50%;
+	}
+
+	@media only screen and (max-width: $bp-micro) {
+		font-size: 40%;
 	}
 }
 
@@ -42,22 +46,13 @@ body {
 }
 
 
-.slide {
+.container {
+	//width: 80vw;
+	margin: 10rem 0;
 	display: grid;
-	grid-template-rows: repeat(3, minmax(min-content, 15.5rem));
-	grid-template-columns: [full-start] 1fr min-content repeat(10, [col-start] minmax(min-content, 28.5rem) [col-end])
-	 1fr [full-end];
-	grid-gap: 3rem;
-	
-
-	@media only screen and (max-width: $bp-medium) {
-		grid-gap: 1.8rem; 
-		grid-template-columns: 1fr repeat(auto-fit, minmax(23rem, 1fr));
-	}
-
-	@media only screen and (max-width: $bp-micro) {
-			grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));		
-		}
+	grid-template-columns: [full-start] 1fr [number-start] min-content [number-end center-start] 
+	repeat(8, [col-start] minmax(min-content, 14rem) [col-end] ) [center-end] 1fr [full-end];
+	grid-template-rows: repeat(3, min-content);
 }
 
 
